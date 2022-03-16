@@ -5,6 +5,17 @@ name = "pypi"
 
 [packages]
 flask-bootstrap = "*"
+flask-migrate = "===2.6.0"
+flask-login = "*"
+flask-simplemde = "*"
+flask-uploads = "*"
+flask-mail = "*"
+flask-wtf = "*"
+flask-sqlalchemy = "*"
+flask = "*"
+markdown2 = "*"
+wtforms = {extras = ["email"], version = "*"}
+psycopg2 = "*"
 
 [dev-packages]
 
