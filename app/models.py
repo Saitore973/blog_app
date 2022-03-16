@@ -94,3 +94,8 @@ class Dislikes(db.Model):
     def get_dislikes(cls,id):
         downvotes = Dislikes.query.filter_by(pitch_id =id).all()
         return downvotes
+
+class Quote:
+    def __init__(self,author,quote):
+        self.author = author
+        self.quote = quote
