@@ -25,3 +25,26 @@ def get_quotes(category):
 
 
     return quote_results
+
+def process_results(quote_list):
+    '''
+    Function  that processes the movie result and transform them to a list of Objects
+
+    Args:
+        movie_list: A list of dictionaries that contain movie details
+
+    Returns :
+        movie_results: A list of movie objects
+    '''
+    quote_results = []
+    for quote_item in quote_list:
+        id = quote_item.get('id')
+        author = quote_item.get('author')
+        quote = quote_item.get('quote')
+        
+
+        if quote:
+            quote_object =  Quote(id,author,quote)
+            quote_results.append(quote_object)
+
+    return quote_results

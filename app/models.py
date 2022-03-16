@@ -96,6 +96,7 @@ class Dislikes(db.Model):
         return downvotes
 
 class Quote:
-    def __init__(self,author,quote):
+    def __init__(self,id,author,quote):
+        self.id = id
         self.author = author
         self.quote = quote
