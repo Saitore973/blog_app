@@ -1,18 +1,30 @@
+
 {%extends 'base.html'%}
 {% block styles%}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 {%block content%}
+<div class="container-fluid">
 <div class="row">
-    <div class="col-3">
-<h1>Say you had only 60 seconds <br/>to impress someone by  <br/>peaching something meanigful, <br/> what would that be?</h1>
+    <div class="col-md-6">
+<h1>I have had thoughts before, <br/>i still do,  <br/>How about if i just penned them in a blog post? <br/> I thought to myself</h1>
     </div>
-    <div class="col-6">
+     <!-- Popular quote section  -->
+        <h3> Popular Quotes</h3>
+         {%for quote in quotes%}
+         <ul>
+             {{quote.quote}}
+             {{quote.author}}
+         </ul>
+         {%endfor%}
+    <div class="col-md-6">
 <img src="https://images.unsplash.com/photo-1647137733683-768846917a63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" width="400" alt=""> <br> <br>
     </div>
 </div>
 
 <a href="/pitches"> <button>Lets get you started</button> </a>
+
+</div>
 
 {%endblock%}

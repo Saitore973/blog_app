@@ -5,9 +5,14 @@ from flask_login import login_required, current_user
 from ..models import  Pitch,User, Dislikes, Likes
 from .. import db
 import markdown2
+from app.requests import get_random_quote
+
 @main.route('/')
 def index():
-    return render_template('index.html')
+    # Getting popular movie
+    quotes = get_random_quote()
+    
+    return render_template('index.html',quotes = quotes)
 
 @main.route("/home")
 def home():
