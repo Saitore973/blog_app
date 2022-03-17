@@ -2,7 +2,7 @@ from flask import render_template,request,redirect,url_for,abort
 from . import main
 from .forms import PitchForm,UpdateProfile
 from flask_login import login_required, current_user
-from ..models import  Pitch,User, Dislikes, Likes
+from ..models import  Pitch,User
 from .. import db
 import markdown2
 from app.requests import get_random_quote
@@ -73,35 +73,3 @@ def update_profile(uname):
 #     return redirect(url_for('main.profile',uname=uname))
 
 
-@main.route('/like/<int:id>',methods = ['POST','GET'])
-@login_required
-def like(id):
-    get_pitches = Likes.get_likes(id)
-    valid_string = f'{current_user.id}:{id}'
-    for pitch in get_pitches:
-        to_str = f'{pitch}'
-        print(valid_string+" "+to_str)
-        if valid_string == to_str:
-            return redirect(url_for('main.pitches',id=id))
-        else:
-            continue
-    new_vote = Likes(user=current_user, pitch_id=id)
-    new_vote.save()
-    return redirect(url_for('main.pitches',id=id))
-
-
-@main.route('/dislike/<int:id>',methods = ['POST','GET'])
-@login_required
-def dislike(id):
-    get_pitches = Dislikes.get_dislikes(id)
-    valid_string = f'{current_user.id}:{id}'
-    for pitch in get_pitches:
-        to_str = f'{pitch}'
-        print(valid_string+" "+to_str)
-        if valid_string == to_str:
-            return redirect(url_for('main.pitches',id=id))
-        else:
-            continue
-    new_vote = Dislikes(dislike=current_user, pitch_id=id)
-    new_vote.save()
-    return redirect(url_for('main.pitches',id=id))

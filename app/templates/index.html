@@ -8,20 +8,20 @@
 <div class="container-fluid">
 <div class="row">
     <div class="col-md-6 hero">
-<h1>I have had thoughts before, <br/>i still do,  <br/>How about if i just penned <br/> them in a blog post? <br/> I thought to myself</h1>
+ <h1>I have had thoughts before, <br/>i still do,  <br/>How about if i just penned <br/> them in a blog post? <br/> I thought to myself <br> <br> <br> <br><span class="emoji">🤗</span> </h1>
     </div>
 
     
      <!-- Popular quote section  -->
-        <h3> TechNinja Quotes</h3>
+        <h3 class="tech"> TechNinja Quotes</h3>
          {%for quote in quotes%}
          <ul>
-             {{quote.quote}}
+            <h3>{{quote.quote}}</h3> 
              {{quote.author}}
          </ul>
          {%endfor%}
     <div class="col-md-6">
-<img src="https://images.unsplash.com/photo-1647137733683-768846917a63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" width="400" alt=""> <br> <br>
+<img src="https://images.unsplash.com/photo-1647137733683-768846917a63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" width="400" height="500" alt=""> <br> <br>
     </div>
 </div>
 

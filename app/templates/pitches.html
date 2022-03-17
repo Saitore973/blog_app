@@ -18,17 +18,21 @@
     <div class="col-md-8">
       <div class="pitch-head">
         <h1>
-          Lets get abit interesting. <br/> Share your thoughts as well!
+          Lets get abit interesting. <br/> <span class="tech">Share your thoughts as well!</span> 
         </h1>
         <div class="pitch-content">
           <div>
             {% for post in posts %}
-            <h6>{{post.pitch}}</h6>
+            <div class="thumbnail">
+              <h3>{{post.pitch}}</h3> <br> <br> <br>
             <em><p>{{post.name}}</p></em>
-            <a href="{{url_for('main.like', id = post.id)}}"><i class=" icon fas fa-thumbs-up"></i></a><span class = "custom"> {{post.likes.count()}} </span></p>
-            <a href="{{url_for('main.dislike', id =post.id )}}"><i class="fas fa-thumbs-down"></i></a> <span class = "custom"> {{post.dislikes.count()}}</span></p>
+            </div>
+            
+            
             <hr>
-            <a href="">Add comment</a>
+            <button>Add comment</button>
+            <button>Update</button>
+            <button>Delete</button>
             <br>
             <br>
           {% endfor %}
