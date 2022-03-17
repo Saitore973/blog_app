@@ -12,3 +12,8 @@ button{
     border:none;
 
 }
+
+button:hover{
+    color:blueviolet;
+    background-color: rgb(187, 181, 181);;
+}
