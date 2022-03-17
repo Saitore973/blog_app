@@ -5,9 +5,9 @@ from wtforms.validators import DataRequired
 
 
 class PitchForm(FlaskForm):
-    pitch = TextAreaField('Enter your Pitch')
+    pitch = TextAreaField('Share your thoughts')
     name = StringField('Enter your name', validators=[DataRequired()])
-    submit = SubmitField('Pitch', validators=[DataRequired()])
+    submit = SubmitField('Blog', validators=[DataRequired()])
 
 class ReviewForm(FlaskForm):
 
