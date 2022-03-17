@@ -3,7 +3,7 @@ body{
 }
 .hero{
     line-height:35px;
-    padding:50px;
+    padding:30px;
 }
 button{
     color: blue;
@@ -16,4 +16,8 @@ button{
 button:hover{
     color:blueviolet;
     background-color: rgb(187, 181, 181);;
+}
+
+.welcome{
+    padding-bottom: 50px;
 }
